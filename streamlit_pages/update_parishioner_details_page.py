@@ -37,18 +37,18 @@ def update_parishioner_details_page():
     with col3:
         option_new_name = st.checkbox('Name')
     with col4:
-        option_new_shifted = st.checkbox('shifted')
+        option_new_doj = st.checkbox('Date of Joining')
     with col5:
-        option_new_doj = st.checkbox('DOJ')
+        option_new_shifted = st.checkbox('shifted')
 
     if option_new_id:
-        field_values_update["new_id"] = (st.number_input("New ID", value = None, min_value=0, step=1, placeholder="Create your updated unique HTC ID"))
+        field_values_update["id"] = (st.number_input("New ID", value = None, min_value=0, step=1, placeholder="Create your updated unique HTC ID"))
     if option_new_phone_number:
-        field_values_update["new_phone_number"] = (st.number_input("Phone Number", value = None, min_value=1000000000,step=1, max_value = 100000000000 , placeholder = "Enter your updated Phone Number"))
+        field_values_update["phone_number"] = (st.number_input("Phone Number", value = None, min_value=1000000000,step=1, max_value = 100000000000 , placeholder = "Enter your updated Phone Number"))
     if option_new_name:
-        field_values_update["new_name"] = st.text_input("New Name", key='update_Parishioner_name', placeholder="Enter your name")
+        field_values_update["name"] = st.text_input("New Name", key='update_Parishioner_name', placeholder="Enter your name")
     if option_new_shifted:
-        field_values_update["shifted"] = st.radio("Shifted", ["Yes", "No"])
+        field_values_update["transferred"] = st.radio("Shifted", ["Yes", "No"])
     if option_new_doj:
         with st.expander('Date of Joining'):
             report_year = st.selectbox("Year",range(datetime.now().year, 1900, -1))
