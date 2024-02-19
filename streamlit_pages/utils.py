@@ -48,7 +48,6 @@ def check_receipt_presence(warn_available, receipt_number):
 # Function to display the complete database
 def get_table_df(table_name):
     conn, cursor = create_connection()
-    cursor.execute(f'SELECT * FROM {table_name}')
     df = pd.read_sql_query(f'SELECT * FROM {table_name}', conn)
     conn.close()
     return df

@@ -11,7 +11,6 @@ from streamlit_pages.explore_data_specific_parishioner_page import explore_data_
 from streamlit_pages.update_payment_details_page import update_payment_details_page
 from streamlit_pages.utils import create_tables
 
-
 # Main Streamlit app
 def main():
     st.set_page_config(
