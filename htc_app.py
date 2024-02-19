@@ -31,7 +31,7 @@ def main():
         </style>
         """, unsafe_allow_html=True
     )
-    stimage = st.sidebar.image('htc_streamlit/images',width=100) # use_column_width=True
+    stimage = st.sidebar.image('images\htcbackground.png',width=100) # use_column_width=True
 
     create_tables()
     tab_options = ["Add Payment", "Update Payment details", "Explore Data Specific Parishioner", 
