@@ -4,7 +4,7 @@ import pandas as pd
 
 # Function to create SQLite connection and cursor
 def create_connection():
-    conn = sqlite3.connect('database\church_support.db')
+    conn = sqlite3.connect('database/church_support.db')
     cursor = conn.cursor()
     return conn, cursor
 
