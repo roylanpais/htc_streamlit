@@ -3,6 +3,7 @@ from datetime import datetime
 import pandas as pd
 import calendar
 import streamlit_authenticator as stauth
+from streamlit_pages.home_page import home_page
 from streamlit_pages.add_payment_page import add_payment_page
 from streamlit_pages.explore_complete_database_page import explore_complete_database_page
 from streamlit_pages.update_parishioner_details_page import update_parishioner_details_page
@@ -32,13 +33,18 @@ def main():
         """, unsafe_allow_html=True
     )
     stimage = st.sidebar.image('images/htcbackground.png',width=100) # use_column_width=True
+    
+
 
     create_tables()
-    tab_options = ["Add Payment", "Update Payment details", "Explore Data Specific Parishioner", 
+    tab_options = ["Home", "Pay church support", "Update Payment details", "Explore Data Specific Parishioner", 
                    "Explore Complete Database", "Add New Parishioner", "Update Parishioner details"]
     selected_tab = st.sidebar.selectbox("Select Tab", tab_options)
 
-    if selected_tab == "Add Payment":
+    if selected_tab == "Home":
+        home_page()
+
+    if selected_tab == "Pay church support":
         add_payment_page()
 
     elif selected_tab == "Update Payment details":
